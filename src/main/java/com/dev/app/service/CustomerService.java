@@ -2,7 +2,6 @@ package com.dev.app.service;
 
 import com.dev.app.model.Customer;
 import com.dev.app.repo.CustomerRepo;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,7 +9,7 @@ import java.util.List;
 @Service
 public class CustomerService {
 
-    private CustomerRepo customerRepo;
+    private final CustomerRepo customerRepo;
 
     public CustomerService(CustomerRepo customerRepo){
         this.customerRepo = customerRepo;
