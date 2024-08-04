@@ -37,7 +37,10 @@ public class CustomerService {
     public Customer updateCustomerById(Integer customerId,Customer newCustomer){
         Customer customer = customerRepo.findById(customerId).orElse(null);
         if(customer!=null){
-            customer = newCustomer;
+            customer.setCustomerFirstName(newCustomer.getCustomerFirstName());
+            customer.setCustomerMiddleName(newCustomer.getCustomerMiddleName());
+            customer.setCustomerLastName(newCustomer.getCustomerLastName());
+            customer.setCustomerGender(newCustomer.getCustomerGender());
             customerRepo.save(customer);
         }
         return customer;
